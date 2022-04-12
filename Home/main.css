@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+
+body{
+    background-color: #f2f5f8;
+}
+
+.left{
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent ;
+    
+}
+
+.left:hover{
+    background-size: 400% 400%;
+    animation: change 5s ease-in-out infinite;
+}
+
+.middle ul li{
+    @apply hover:text-purple-600 hover:tracking-widest ease-in-out duration-500;
+}
+
+.right ul li{
+    @apply hover:text-purple-900 hover:tracking-wider ease-out duration-500 ; 
+}
+
+.blocks{
+    background-color: #f2f5f8;
+    box-shadow: 7px 7px 15px #dcd6dd , -4px -4px 13px #fff,
+    inset 4px 4px 8px rgba(209 , 217 ,230 , 0.2) ;
+}
+
+.blocks.news{
+    @apply hover:bg-gray-200 cursor-pointer;
+}
+
+/* Keyframes */
+
+@keyframes change{
+    0%{
+        background-position: 0 50%;
+    }
+    25%{
+        background-position: 50% 100%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    75%{
+        background-position: 50% 0;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+/* Enquire */
+.enquire.show{
+    @apply visible;
+}
+.enquire.hide{
+    @apply hidden;
+}
+
+/* Contact */
+.contact.show{
+    @apply visible;
+}
+.contact.hide{
+    @apply hidden;
+}
+
+/* Scroll Bar*/
+::-webkit-scrollbar{
+    @apply h-1 w-1.5 rounded-sm cursor-pointer
+}
+
+::-webkit-scrollbar-track{
+    @apply bg-gray-100 rounded-sm cursor-pointer 
+}
+
+::-webkit-scrollbar-thumb{
+    @apply rounded-sm cursor-pointer bg-gradient-to-t from-indigo-500 via-purple-500 to-pink-500
+}
+
+
+@tailwind utilities;
